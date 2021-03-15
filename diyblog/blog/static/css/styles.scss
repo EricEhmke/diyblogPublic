@@ -1,0 +1,225 @@
+$black: #454545;
+$blue: #07a;
+$egg: #fffef4;
+$primary-color: $black;
+$primary-color-link: $blue;
+$breakpoint-mobile: 500px;
+
+body {
+    font-family: Open Sans, Arial, sans-serif;
+    color: $primary-color;
+    max-width: 800px;
+    font-size:1.1rem;
+    margin:0 auto;
+    line-height:1.5;
+}
+
+.text-center {
+  text-align: center;
+}
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+a {
+  color:inherit;
+  text-decoration: none;
+
+ }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  margin: 0 auto;
+  color: $primary-color;
+  font-weight: bold;
+  padding: 1rem;
+  flex-direction: column;
+
+  @media only screen and (min-width: $breakpoint-mobile) {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  #social-icons {
+    display: flex;
+    justify-content: flex-start;
+
+    svg {
+      margin: 0 1rem 0 0;
+      @media only screen and (min-width: $breakpoint-mobile) {
+        margin: 0 0 0 1rem;
+      }
+    }
+
+    @media only screen and (min-width: $breakpoint-mobile) {
+      margin: 0 0 0 1rem;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+  }
+
+}
+
+.header a.logo{
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+
+.header a.nodecoration{
+  text-decoration: none;
+  margin: 0 1rem 0 0;
+
+  @media only screen and (min-width: $breakpoint-mobile) {
+    margin: 0 0 0 1rem;
+  }
+
+}
+
+.header a:hover {
+  text-decoration: underline;
+}
+
+main {
+  margin: 0 auto;
+  padding: 1rem 1rem 2.5rem;
+}
+
+.front-page-post {
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+ margin: 2rem 0 6rem 0;
+
+  img {
+    display: block;
+    margin: auto;
+    max-width: 100%;
+    height: auto;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  h2 {
+    margin-top:auto;
+    margin-bottom: auto;
+  }
+
+}
+
+
+.firstpublished {
+ font-size: 1rem;
+ margin: .5rem 0 .5rem 0;
+ font-weight: bold;
+}
+
+.indextitle {
+ font-size: 2.2rem;
+ text-decoration: none;
+ font-weight: bold;
+ color: $primary-color;
+}
+
+
+.subtitle {
+ margin: 0;
+ padding-top: .625rem;
+ font-size: 1.2rem;
+}
+
+.blogposttitle {
+ font-size: 2.5rem;
+ font-weight: 900;
+ color: $primary-color;
+ margin-bottom: 2.0rem;
+ margin-top: 0;
+
+}
+
+.tags {
+ font-style: italic;
+ text-decoration: underline;
+}
+
+.aboutthumb {
+ float: left;
+ max-width: 150px;
+ border-style: solid;
+ border-width: 2px;
+ margin:0 1rem 1rem 0;
+}
+
+#about-main section {
+ display: table;
+}
+
+.no-margin {
+ margin: 0 0 0 0
+}
+
+.commentheader {
+ font-size: 1.5rem;
+ text-decoration: none;
+ font-weight: bold;
+ margin-top: 2rem;
+ margin-bottom: 1rem;
+
+}
+
+.commentcount {
+ font-size: .75rem;
+ font-style: italic;
+}
+
+#id_honeypot {
+    display: none;
+}
+
+.comments-respond {
+    margin: 4rem 0 0 0
+
+}
+
+.comment-list {
+    border-bottom: 2px solid;
+}
+
+input, label {
+    display:block;
+}
+
+.post-content {
+  overflow: hidden;
+
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+  }
+  a {
+    text-decoration: underline;
+    color: $primary-color-link;
+  }
+  code{
+    overflow-x: auto;
+  }
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+  margin: auto;
+  text-align: center;
+}

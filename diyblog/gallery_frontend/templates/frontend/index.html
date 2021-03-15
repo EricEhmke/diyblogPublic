@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+{% block head %}
+<head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="author" content="Eric Ehmke">
+      <meta name="description" content="Blog, projects & accomplishments of Eric Ehmke">
+      <title>Eric Ehmke - Gallery</title>
+      {% load static %}
+      <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+{% endblock %}
+{% block content %}
+<div id="app">
+    <!-- React will load here -->
+</div>
+{% load static %}
+<script src="{% static 'js/main.js' %}"></script>
+{% endblock %}

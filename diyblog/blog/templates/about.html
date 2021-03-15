@@ -1,0 +1,46 @@
+{% extends "base_generic.html" %}
+{% block head %}
+<head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="author" content="Eric Ehmke">
+      <meta name="description" content="Eric Ehmke is a web developer and data scientist who continuously improves.">
+      <title>About - The Blog of Eric Ehmke</title>
+      {% load static %}
+      <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+{% endblock %}
+
+{% block content %}
+
+<h1 class="blogposttitle">About</h1>
+    <section id="about">
+        <img class="aboutthumb" alt="Eric Ehmke" src=" {% static 'images/aboutthumb_9zOin9r.jpg' %}">
+            <p class="no-margin">Hello! Thanks for being curious about who I am and what I'm up to. I created this blog to share my
+            personal and professional thoughts & projects, mainly centered around coding and continuous improvement.</p>
+            <p>I am a developer currently working in data science but my interests and fascinations are varied. I enjoy
+                tinkering with Linux, studying computer science and sharpening my development skills. Outside of technology
+            I enjoy working on my air-cooled Volkswagen Beetle, film photography, playing the banjo and weightlifting.</p>
+    </section>
+    <section id="cv">
+        <h2><strong>The CV part:</strong></h2>
+        <p>
+            Eric Ehmke is a data scientist & developer at a multinational aerospace company. He
+            transitioned to the field after a career in manufacturing operations and quality focusing on data analytics.
+            Eric graduated from Central Connecticut State University with a degree in Industrial Technology in 2014
+            and has a proven track record of creating value through and data-driven process improvements.
+        </p>
+        <p>
+            Before transitioning to data science, Eric led a team of 25+ operating an advanced metallic and ceramic
+            coatings cell for military & commercial aircraft engine components. Under his management production runs
+            increased by 18% and 27%. He leveraged his development skills to build Python based digital factory tools, aid
+            production tracking, total preventative maintenance scheduling and machine qualification.
+        </p>
+        <p>
+            Eric has also performed roles in quality engineering mitigating quality risks, analyzing production data and auditing supplier processes.
+            Eric designed and managed contractor teams valued at $280,000 y/r, traveled throughout the United States coaching the PPAP process
+            and interacting with commercial and military customers & suppliers.
+        </p>
+</section>
+
+{% endblock %}

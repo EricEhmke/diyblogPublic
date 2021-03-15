@@ -1,0 +1,26 @@
+{% extends "base_generic.html" %}
+{% block head %}
+<head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="author" content="Eric Ehmke">
+      <meta name="description" content="All Blog Posts">
+      <title>Eric Ehmke - All Posts</title>
+      {% load static %}
+      <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+{% endblock %}
+{% block content %}
+  <h2>Post List</h2>
+  {% if blogpost_list %}
+  <ul>
+    {% for post in blogpost_list %}
+      <li>
+        <a class="indextitle" href="{{ post.get_absolute_url }}">{{ post.title }}</a> - ({{post.firstpublished}})
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no posts on the blog.</p>
+  {% endif %}       
+{% endblock %} 

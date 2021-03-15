@@ -1,0 +1,29 @@
+{% extends "base_generic.html" %}
+
+{% block head %}
+<head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="author" content="Eric Ehmke">
+      <meta name="description" content="Blog, projects & accomplishments of Eric Ehmke">
+      <title>Eric Ehmke - Blog</title>
+      {% load static %}
+      <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link href="{% static 'css/default.css' %}" rel="stylesheet">
+    <script src="{% static 'js/highlight.pack.js' %}"></script>
+</head>
+{% endblock %}
+{% block content %}
+    {% for post in posts %}
+        <article>
+            <div class="front-page-post">
+                <p class="firstpublished">{{ post.firstpublished }}</p>
+                <a href="{{ post.get_absolute_url }}"><img src="{{ post.leadimage.image.url }}" alt="{{ post.leadimage.alt_text }}"></a>
+                <div class="postdescription">
+                    <h2><a href="{{ post.get_absolute_url }}" class="indextitle">{{ post.title }}</a></h2>
+                    <p class="subtitle"> {{ post.subtitle }}</p>
+                </div>
+            </div>
+        </article>
+    {% endfor %}
+{% endblock %} 

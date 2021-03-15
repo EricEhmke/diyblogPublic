@@ -1,0 +1,78 @@
+{% extends "base_generic.html" %}
+{% block head %}
+<head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="author" content="Eric Ehmke">
+      <meta name="description" content="{{ blogpost.subtitle }}">
+      <title>Eric Ehmke - {{ blogpost.title }}</title>
+      {% load static %}
+    <link href="{% static 'css/default.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <script src="{% static 'js/highlight.pack.js' %}"></script>
+</head>
+{% endblock %}
+
+{% block content %}
+<p class="firstpublished">{{ blogpost.firstpublished}}</p>
+    <h1 class="blogposttitle">{{ blogpost.title }}</h1>
+        <article>
+            <div class="post-content">
+                {{ blogpost.text|safe }}
+            </div>
+        </article>
+
+
+<section>Tagged with:{% for tag in blogpost.tags.all %} <a href="{{ tag.get_absolute_url }}" class="tags">{{ tag.name }}</a>{% if not forloop.last %}, {% endif %}{% endfor %}</section>
+<section>
+    <h2 class="commentheader">Comments</h2>
+        {% load comments %}
+        {% get_comment_list for blogpost as comment_list %}
+        {% for comment in comment_list %}
+            <section class="comment-list">
+                <b>{{ comment.user_name }}</b>
+                 - {{ comment.user_url|urlize }}
+                {{ comment.submit_date }}
+                <p>{{ comment.comment|urlize }}</p>
+            </section>
+        {% endfor %}
+</section>
+<section id="respond" class="comments-respond">
+    <p class="commentheader">Leave a Reply</p>
+    <p>Your email address will not be published. Required fields marked with *</p>
+    {% get_comment_form for blogpost as form %}
+    <table>
+        <form action="{% comment_form_target %}" method="post">
+            {% csrf_token %}
+            <p>
+                <label>Comment</label>
+                {{ form.comment }}
+            </p>
+            <p>
+                <label>Name *</label>
+                {{ form.name }}
+            </p>
+            <p>
+                <label>Email *</label>
+                {{ form.email }}
+            </p>
+            <p>
+                <label>Website</label>
+                {{ form.url }}
+            </p>
+            {{ form.honeypot }}
+            {{ form.content_type }}
+            {{ form.object_pk }}
+            {{ form.timestamp }}
+            {{ form.security_hash }}
+            <tr>
+                <td colspan="2">
+                    <input type="hidden" name="next" value="{{ blogpost.get_absolute_url }}"/>
+                    <input type="submit" name="submit" value="Post Comment">
+                </td>
+            </tr>
+        </form>
+    </table>
+</section>
+<script>hljs.initHighlightingOnLoad();</script>
+{% endblock %}

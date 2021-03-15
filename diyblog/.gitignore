@@ -1,0 +1,5 @@
+/node_modules/
+/.dart_tool/
+/blog/migrations/
+/gallery/migrations/
+/gallery_frontend/migrations/
